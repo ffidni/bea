@@ -5,8 +5,11 @@
     <div class="container mx-auto px-4 py-8 w-fit my-2">
             <h2 class="text-2xl font-bold mb-4">Edit Mahasiswa</h2>
             <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-fit">
-                <form method="POST" action="{{ route('akademis.update_mahasiswa_process') }}" enctype="multipart/form-data" class="flex gap-5 flex-col lg:grid lg:grid-cols-2 items-center" >
+                <form method="POST" action="{{ route('akademis.update_mahasiswa_process', encrypt($mahasiswa->mahasiswa_id)) }}" enctype="multipart/form-data" class="flex gap-5 flex-col lg:grid lg:grid-cols-2 items-center" >
                     @csrf
+
+                    <input type="text" name="mahasiswa_id" class="hidden peer input w-full @error('login') border-red-500 @enderror"  value="{{$mahasiswa->mahasiswa_id}}"/>
+
                     <div class="input-container lg:w-full">
                         <div class="relative bg-inherit ">
                             <input type="text" id="nim" name="nim" class="peer input w-full @error('login') border-red-500 @enderror" placeholder="NIM" value="{{ old('nim') ?? $mahasiswa->nim }}"/>

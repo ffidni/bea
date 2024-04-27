@@ -20,4 +20,13 @@ class Pendaftaran extends Model
         "status_ajuan",
         "photo",
     ];
+
+    public function mahasiswa()
+    {
+        return $this->hasOne(Mahasiswa::class, "mahasiswa_id");
+    }
+    public function jenis_beasiswa()
+    {
+        return $this->hasOne(JenisBeasiswa::class, "jenis_beasiswa_id");
+    }
 }

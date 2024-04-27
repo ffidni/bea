@@ -5,7 +5,7 @@
 @section("content")
 
     @php
-        $status_ajuan = "verified";
+        $status_ajuan = $mahasiswa->status_ajuan;
         $status_message = "";
         $animation_size = null;
         $gap = "my-6";

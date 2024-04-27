@@ -1,14 +1,13 @@
 @extends("layout.akademis_template", ["selectedMenu" => 1])
 
-    
     @section("content")
         <div class="container mx-auto px-4 py-8 w-fit my-2">
             <h2 class="text-2xl font-bold mb-4">Tambah Mahasiswa</h2>
             
             <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-fit">
-                <form method="POST" action="{{ route('akademis.registerProcess') }}" enctype="multipart/form-data" class="flex gap-5 flex-col lg:grid lg:grid-cols-2 " >
+                <form method="POST" action="{{ route('akademis.add_mahasiswa_process') }}" enctype="multipart/form-data" class="flex gap-5 flex-col lg:grid lg:grid-cols-2 " >
                     @csrf
-                    <input type="hidden" name="status" class="hidden" placeholder="NIM" value="verified"/>
+                    <input type="hidden" name="status" class="hidden" placeholder="status" value="verified"/>
                     
                     <div class="input-container lg:w-56">
                         <div class="relative bg-inherit ">

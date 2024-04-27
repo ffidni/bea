@@ -6,7 +6,7 @@
     <div class="p-8 mt-6 lg:mt-0 rounded-lg shadow bg-white">
         <div class="flex justify-between gap-3 mb-8">
             <h2 class="font-bold text-lg mb-4">Daftar Mahasiswa</h2>
-            <a class="bg-blue-500 text-white rounded-lg flex justify-center gap-2 px-3 font-medium text-sm items-center pointer hover:bg-blue-600">
+            <a href="/akademis/add-mahasiswa" class="bg-blue-500 text-white rounded-lg flex justify-center gap-2 px-3 font-medium text-sm items-center pointer hover:bg-blue-600">
                 <i class="fas fa-add"></i>
                 Tambah
             </a>
@@ -34,7 +34,7 @@
                         <a class="text-blue-500 hover:text-blue-700" title="Edit" href="{{route('akademis.update_mahasiswa', encrypt($mahasiswa->mahasiswa_id))}}">
                             <i class="fas fa-edit"></i>
                         </a>
-                        <a class="text-red-500 hover:text-red-700" title="Delete">
+                        <a class="text-red-500 hover:text-red-700" title="Delete" href="{{route('akademis.remove_mahasiswa', encrypt($mahasiswa->mahasiswa_id))}}">
                             <i class="fas fa-trash-alt"></i>
                         </a>
                     </td>
@@ -82,9 +82,11 @@
                     <td>{{ $nilai->nilai_semester8 }}</td>
                     <td class="flex justify-center items-center gap-3">
                         <button class="text-blue-500 hover:text-blue-700" title="Edit">
+                        <a class="text-blue-500 hover:text-blue-700" title="Edit" href="{{route('akademis.update_mahasiswa', encrypt($nilai->transkip_nilai_id))}}">
                             <i class="fas fa-edit"></i>
+                        </a>
                         </button>
-                        <button class="text-red-500 hover:text-red-700" title="Delete">
+                        <a class="text-red-500 hover:text-red-700" title="Delete" href="{{route('akademis.remove_nilai', encrypt($nilai->transkip_nilai_id))}}">
                             <i class="fas fa-trash-alt"></i>
                         </button>
                     </td>

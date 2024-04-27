@@ -23,7 +23,8 @@
                         <ul class="list-reset">
                             <li><a href="{{route('akademis.dashboard', ['selectedMenu' => 0])}}" class="px-4 py-2 block text-gray-900 hover:bg-gray-400 no-underline hover:no-underline">Dashboard</a></li>
                             <li><a href="{{route('akademis.mahasiswa', ['selectedMenu' => 1])}}" class="px-4 py-2 block text-gray-900 hover:bg-gray-400 no-underline hover:no-underline">Mahasiswa</a></li>
-                            <li><a href="{{route('akademis.beasiswa', ['selectedMenu' => 2])}}" class="px-4 py-2 block text-gray-900 hover:bg-gray-400 no-underline hover:no-underline">Beasiswa</a></li>
+                            <li><a href="{{route('akademis.beasiswa', ['selectedMenu' => 2])}}" class="px-4 py-2 block text-gray-900 hover:bg-gray-400 no-underline hover:no-underline">Jenis Beasiswa</a></li>
+                            <li><a href="{{route('akademis.pendaftaran', ['selectedMenu' => 4])}}" class="px-4 py-2 block text-gray-900 hover:bg-gray-400 no-underline hover:no-underline">Pendaftaran Beasiswa</a></li>
                             <li><a href="{{route('akademis.admin', ['selectedMenu' => 3])}}" class="px-4 py-2 block text-gray-900 hover:bg-gray-400 no-underline hover:no-underline">Admin</a></li>
                             <li>
                                 <hr class="border-t mx-2 border-gray-400">
@@ -61,6 +62,11 @@
                 <li class="mr-6 my-2 md:my-0">
                     <a href="{{route('akademis.beasiswa')}}"  class="block py-1 md:py-3 pl-1 align-middle {{ $selectedMenu == 2 ? 'text-blue-600' : 'text-gray-500' }}no-underline border-b-2 border-white hover:border-blue-600">
                         <i class="fas fa-graduation-cap fa-fw mr-3 {{$selectedMenu == 2 ? 'text-blue-600' : 'text-gray-500'}}"></i><span class="pb-1 md:pb-0 text-sm">Beasiswa</span>
+                    </a>
+                </li>
+                <li class="mr-6 my-2 md:my-0">
+                    <a href="{{route('akademis.pendaftaran')}}"  class="block py-1 md:py-3 pl-1 align-middle {{ $selectedMenu == 4 ? 'text-blue-600' : 'text-gray-500' }}no-underline border-b-2 border-white hover:border-blue-600">
+                        <i class="fas fa-graduation-cap fa-fw mr-3 {{$selectedMenu == 4 ? 'text-blue-600' : 'text-gray-500'}}"></i><span class="pb-1 md:pb-0 text-sm">Pendaftaran Beasiswa</span>
                     </a>
                 </li>
                 <li class="mr-6 my-2 md:my-0">

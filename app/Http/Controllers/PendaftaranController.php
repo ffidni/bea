@@ -63,6 +63,6 @@ class PendaftaranController extends Controller
         Pendaftaran::create($inputData);
 
         Session::flash("success", "Pendaftaran beasiswa berhasil diajukan!");
-        return redirect()->route('mahasiswa.beasiswa.hasil_beasiswa');
+        return redirect()->route('mahasiswa.hasil_beasiswa');
     }
 }

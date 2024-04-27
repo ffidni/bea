@@ -35,39 +35,41 @@ Route::post("/cek-hasil", [MahasiswaController::class, 'cek_hasil_beasiswa'])->n
 Route::get("/akademis/dashboard", [AdminController::class, 'index'])->name("akademis.dashboard");
 
 Route::get("/akademis/beasiswa", [AdminController::class, 'beasiswa'])->name("akademis.beasiswa");
-Route::get("/akademis/add-beasiswa/{slug}", [AdminController::class, 'addBeasiswa'])->name("akademis.add_beasiswa");
-Route::get("/akademis/add-beasiswa-process", [AdminController::class, 'addBeasiswaProcess'])->name("akademis.add_beasiswa_process");
+Route::get("/akademis/add-beasiswa", [AdminController::class, 'addBeasiswa'])->name("akademis.add_beasiswa");
+Route::post("/akademis/add-beasiswa-process", [AdminController::class, 'addBeasiswaProcess'])->name("akademis.add_beasiswa_process");
 Route::get("/akademis/update-beasiswa/{slug}", [AdminController::class, 'editBeasiswa'])->name("akademis.update_beasiswa");
-Route::get("/akademis/update-beasiswa-process", [AdminController::class, 'editBeasiswaProcess'])->name("akademis.update_beasiswa_process");
-Route::get("/akademis/remove-beasiswa/{slug}", [AdminController::class, 'removeBeasiswa'])->name("akademis.remove_beasiswa");
+Route::post("/akademis/update-beasiswa-process", [AdminController::class, 'editBeasiswaProcess'])->name("akademis.update_beasiswa_process");
+Route::post("/akademis/remove-beasiswa/{slug}", [AdminController::class, 'removeBeasiswa'])->name("akademis.remove_beasiswa");
 
 Route::get("/akademis/mahasiswa", [AdminController::class, 'mahasiswa'])->name("akademis.mahasiswa");
-Route::get("/akademis/mahasiswa/add/{slug}", [AdminController::class, 'addMahasiswa'])->name("akademis.add_mahasiswa");
-Route::get("/akademis/add-mahasiswa-process", [AdminController::class, 'addMahasiswaProcess'])->name("akademis.add_mahasiswa_process");
-Route::get("/akademis/mahasiswa/update/{slug}", [AdminController::class, 'editMahasiswa'])->name("akademis.update_mahasiswa");
-Route::get("/akademis/update-mahasiswa-process", [AdminController::class, 'editMahasiswaProcess'])->name("akademis.update_mahasiswa_process");
-Route::get("/akademis/mahasiswa/remove/{slug}", [AdminController::class, 'removeMahasiswa'])->name("akademis.remove_mahasiswa");
+Route::get("/akademis/add-mahasiswa", [AdminController::class, 'addMahasiswa'])->name("akademis.add_mahasiswa");
+Route::post("/akademis/add-mahasiswa-process", [AdminController::class, 'addMahasiswaProcess'])->name("akademis.add_mahasiswa_process");
+Route::get("/akademis/update-mahasiswa/{slug}", [AdminController::class, 'editMahasiswa'])->name("akademis.update_mahasiswa");
+Route::post("/akademis/update-mahasiswa-process", [AdminController::class, 'editMahasiswaProcess'])->name("akademis.update_mahasiswa_process");
+Route::get("/akademis/remove-mahasiswa/{slug}", [AdminController::class, 'removeMahasiswa'])->name("akademis.remove_mahasiswa");
 
 Route::get("/akademis/pendaftaran", [AdminController::class, 'pendaftaran'])->name("akademis.pendaftaran");
-Route::get("/akademis/add-pendaftaran/{slug}", [AdminController::class, 'addPendaftaran'])->name("akademis.add_pendaftaran");
-Route::get("/akademis/add-pendaftaran-process", [AdminController::class, 'addPendaftaranProcess'])->name("akademis.add_pendaftaran_process");
+Route::get("/akademis/add-pendaftaran", [AdminController::class, 'addPendaftaran'])->name("akademis.add_pendaftaran");
+Route::post("/akademis/add-pendaftaran-process", [AdminController::class, 'addPendaftaranProcess'])->name("akademis.add_pendaftaran_process");
 Route::get("/akademis/update-pendaftaran/{slug}", [AdminController::class, 'editPendaftaran'])->name("akademis.update_pendaftaran");
-Route::get("/akademis/update-pendaftaran-process", [AdminController::class, 'editPendaftaranProcess'])->name("akademis.update_pendaftaran_process");
-Route::get("/akademis/remove-pendaftaran/{slug}", [AdminController::class, 'removePendaftaran'])->name("akademis.remove_pendaftaran");
+
+Route::post("/akademis/update-pendaftaran-process/{slug}", [AdminController::class, 'editPendaftaranProcess'])->name("akademis.update_pendaftaran_process");
+Route::post("/akademis/remove-pendaftaran/{slug}", [AdminController::class, 'removePendaftaran'])->name("akademis.remove_pendaftaran");
 
 Route::get("/akademis/admin", [AdminController::class, 'admin'])->name("akademis.admin");
-Route::get("/akademis/add-admin/{slug}", [AdminController::class, 'addAdmin'])->name("akademis.add_admin");
-Route::get("/akademis/add-admin-process", [AdminController::class, 'addAdminProcess'])->name("akademis.add_admin_process");
+Route::get("/akademis/add-admin", [AdminController::class, 'addAdmin'])->name("akademis.add_admin");
+Route::post("/akademis/add-admin-process", [AdminController::class, 'addAdminProcess'])->name("akademis.add_admin_process");
 Route::get("/akademis/update-admin/{slug}", [AdminController::class, 'editAdmin'])->name("akademis.update_admin");
-Route::get("/akademis/update-admin-process", [AdminController::class, 'editAdminProcess'])->name("akademis.update_admin");
-Route::get("/akademis/remove-admin/{slug}", [AdminController::class, 'removeAdmin'])->name("akademis.remove_admin");
+Route::post("/akademis/update-admin-process", [AdminController::class, 'editAdminProcess'])->name("akademis.update_admin");
+Route::post("/akademis/remove-admin/{slug}", [AdminController::class, 'removeAdmin'])->name("akademis.remove_admin");
 
 Route::get("/akademis/nilai", [AdminController::class, 'nilai'])->name("akademis.nilai");
-Route::get("/akademis/add-nilai/{slug}", [AdminController::class, 'addNilai'])->name("akademis.add_nilai");
-Route::get("/akademis/add-nilai-process/{slug}", [AdminController::class, 'addNilaiProcess'])->name("akademis.add_nilai_process");
+Route::get("/akademis/add-nilai", [AdminController::class, 'addNilai'])->name("akademis.add_nilai");
+Route::post("/akademis/add-nilai-process/{slug}", [AdminController::class, 'addNilaiProcess'])->name("akademis.add_nilai_process");
 Route::get("/akademis/update-nilai/{slug}", [AdminController::class, 'editNilai'])->name("akademis.update_nilai");
-Route::get("/akademis/update-nilai-process", [AdminController::class, 'editNilaiProcess'])->name("akademis.update_nilai_process");
-Route::get("/akademis/remove-nilai/{slug}", [AdminController::class, 'removeNilai'])->name("akademis.remove_nilai");
+
+Route::post("/akademis/update-nilai-process", [AdminController::class, 'editNilaiProcess'])->name("akademis.update_nilai_process");
+Route::post("/akademis/remove-nilai/{slug}", [AdminController::class, 'removeNilai'])->name("akademis.remove_nilai");
 
 
 Route::get("/akademis/login", [UserController::class, 'login'])->name("akademis.login");
